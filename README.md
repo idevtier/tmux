@@ -1,13 +1,29 @@
-if '[ -f ~/.config/tmux/.tmux.conf ]' 'source ~/.config/tmux/.tmux.conf'
-if '[ -f ~/.config/tmux/.tmux.statusline.conf ]' 'source ~/.config/tmux/.tmux.statusline.conf'
-if '[ -f ~/.config/tmux/.tmux.copymod.conf ]' 'source ~/.config/tmux/.tmux.copymod.conf'
-if '[ -f ~/.config/tmux/.tmux.pomodorro.conf ]' 'source ~/.config/tmux/.tmux.pomodorro.conf'
+# idevtier's tmux config
 
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'olimorris/tmux-pomodoro-plus'
-set -g @plugin 'ChanderG/tmux-notify'
-set -g @plugin 'MunifTanjim/tmux-mode-indicator'
-set -g @plugin 'tmux-plugins/tmux-battery'
-set -g @plugin 'roosta/tmux-fuzzback'
-run -b '~/.tmux/plugins/tpm/tpm'
+### Features
+A banch of custom bash scripts, that improve tmux workflow
+* Interactive create and switch session with `Prefix+N`
+* Fzf search and kill session with `Prefix+k`
+* Open lazygit in a new window with `Prefix+g`
+* Open any command in split pane `Prefix+e` (for neovim only now)
+
+### How to install
+
+**Important** Save your `~/.tmux.conf` first, if you have some
+
+Firstly install [tpm](https://github.com/tmux-plugins/tpm) first
+
+Then install config:
+```bash
+cd ~/.config
+git clone https://github.com/idevtier/tmux
+rm ~/.tmux.conf
+ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
+```
+
+### Tricky moments
+#### Panes navigation
+My config uses [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+for navigation between neovim and tmux panes with `C+<hjkl>`.
+It requires to install neovim plugin too.
 
