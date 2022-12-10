@@ -11,7 +11,7 @@ A banch of custom bash scripts, that improve tmux workflow
 
 **Important** Save your `~/.tmux.conf` first, if you have some
 
-Firstly install [tpm](https://github.com/tmux-plugins/tpm) first
+Firstly install [tpm](https://github.com/tmux-plugins/tpm)
 
 Then install config:
 ```bash
