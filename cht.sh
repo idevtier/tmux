@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-languages=`echo "js python java" | tr ' ' '\n'`
+languages=`echo "js python java rust bash" | tr ' ' '\n'`
 
 selected=`printf "$languages" | fzf`
 read -p "query: " query
