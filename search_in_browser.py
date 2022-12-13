@@ -41,10 +41,11 @@ def load_bookmarks(bookmarks_path: str) -> Bookmarks:
 def load_query(bookmarks: Bookmarks) -> Query:
     fzf = FzfPrompt()
     result = fzf.prompt(bookmarks.get_bookmarks_list(), fzf_options="--border rounded --print-query")
-    query = result[0]
     if len(result) == 1:
+        query = result[0]
         return SEARCH_QUERY.format(query=query)
     else:
+        query = result[1]
         return bookmarks.get_link_by_bookmark(query)
 
 
@@ -55,7 +56,6 @@ def open_link_in_browser(browser: Browser, query: Query) -> None:
 def main(browser: Browser, bookmarks_path: str) -> None:
     bookmarks = load_bookmarks(bookmarks_path)
     query = load_query(bookmarks)
-    print(f"{query=}")
     open_link_in_browser(browser, query)
 
 
