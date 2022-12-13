@@ -36,7 +36,7 @@ def main() -> None:
     fzf = FzfPrompt()
     playlist = get_music_playlist()
 
-    video_name = fzf.prompt(playlist.get_video_names())[0]
+    video_name = fzf.prompt(playlist.get_video_names(), fzf_options="--border rounded")[0]
     link = playlist.get_link_by_video_name(video_name)
 
     os.system("clear")
