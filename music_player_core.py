@@ -7,7 +7,7 @@ from typing import Optional
 Link = str
 VideoName = str
 
-MUSIC_PLAYLIST_PATH = "/home/idevtier/vimwiki/Music playlists.wiki"
+MUSIC_PLAYLIST_PATH = "/home/idevtier/Documents/wiki/notes/home/music_playlists.norg"
 
 
 @dataclass

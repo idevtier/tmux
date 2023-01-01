@@ -43,6 +43,8 @@ def load_query(bookmarks: Bookmarks) -> Query:
     result = fzf.prompt(bookmarks.get_bookmarks_list(), fzf_options="--border rounded --print-query")
     if len(result) == 1:
         query = result[0]
+        if query.startswith("http"):
+            return query
         return SEARCH_QUERY.format(query=query)
     else:
         query = result[1]
